@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>form</title>
+    <link href="common/css/main.css" rel="stylesheet">
+        <link href="common/css/jquery.steps.css" rel="stylesheet">
+  </head>
+  <body>
+    <section id="basic-form">
+      <h2 class="page-header">Basic Form Example</h2>
+      <form id="form-2" action="#" novalidate="novalidate">
+        <div id="wizard-2" role="application" class="wizard clearfix">
+          <div class="steps clearfix">
+            <ul role="tablist">
+              <li role="tab" class="first current" aria-disabled="false" aria-selected="true"><a id="wizard-2-t-0" href="#wizard-2-h-0" aria-controls="wizard-2-p-0"><span class="current-info audible">current step: </span><span class="number">1.</span> Account</a></li>
+              <li role="tab" class="disabled" aria-disabled="true"><a id="wizard-2-t-1" href="#wizard-2-h-1" aria-controls="wizard-2-p-1"><span class="number">2.</span> Profile</a></li>
+              <li role="tab" class="disabled" aria-disabled="true"><a id="wizard-2-t-2" href="#wizard-2-h-2" aria-controls="wizard-2-p-2"><span class="number">3.</span> Hints</a></li>
+              <li role="tab" class="disabled last" aria-disabled="true"><a id="wizard-2-t-3" href="#wizard-2-h-3" aria-controls="wizard-2-p-3"><span class="number">4.</span> Finish</a></li>
+            </ul>
+          </div>
+          <div class="content clearfix">
+            <h3 id="wizard-2-h-0" tabindex="-1" class="title current">Account</h3>
+            <section id="wizard-2-p-0" role="tabpanel" aria-labelledby="wizard-2-h-0" class="body current" aria-hidden="false" style="display: block;">
+              <label for="userName">User name *</label>
+              <input id="userName" name="userName" type="text" class="required">
+              <label for="password">Password *</label>
+              <input id="password" name="password" type="text" class="required">
+              <label for="confirm">Confirm Password *</label>
+              <input id="confirm" name="confirm" type="text" class="required">
+              <p>(*) Mandatory</p>
+            </section>
+            <h3 id="wizard-2-h-1" tabindex="-1" class="title">Profile</h3>
+            <section id="wizard-2-p-1" role="tabpanel" aria-labelledby="wizard-2-h-1" class="body" aria-hidden="true" style="display: none;">
+              <label for="name">First name *</label>
+              <input id="name" name="name" type="text" class="required">
+              <label for="surname">Last name *</label>
+              <input id="surname" name="surname" type="text" class="required">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="text" class="required email">
+              <label for="address">Address</label>
+              <input id="address" name="address" type="text">
+              <p>(*) Mandatory</p>
+            </section>
+            <h3 id="wizard-2-h-2" tabindex="-1" class="title">Hints</h3>
+            <section id="wizard-2-p-2" role="tabpanel" aria-labelledby="wizard-2-h-2" class="body" aria-hidden="true" style="display: none;">
+              Panel 3
+            </section>
+            <h3 id="wizard-2-h-3" tabindex="-1" class="title">Finish</h3>
+            <section id="wizard-2-p-3" role="tabpanel" aria-labelledby="wizard-2-h-3" class="body" aria-hidden="true" style="display: none;">
+              panel 4
+            </section>
+          </div>
+          <div class="actions clearfix">
+            <ul role="menu" aria-label="Pagination">
+              <li class="disabled" aria-disabled="true"><a href="#previous" role="menuitem">Previous</a></li>
+              <li aria-hidden="false" aria-disabled="false"><a href="#next" role="menuitem">Next</a></li>
+              <li aria-hidden="true" style="display: none;"><a href="#finish" role="menuitem">Finish</a></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </section>
+    <script src="common/js/jquery.js"></script>
+    <script src="common/js/jquery.steps.min.js"></script>
+    <script>
+
+        $(function ()
+        {
+        alert("hello function");
+            $("#wizard-1").steps({
+                headerTag: "h3",
+                bodyTag: "section",
+                transitionEffect: "slideLeft",
+                autoFocus: true
+            });
+
+            $("#form-2").validate({
+                errorPlacement: errorPlacement,
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
+            });
+
+            $("#wizard-2").steps({
+                headerTag: "h3",
+                bodyTag: "section",
+                transitionEffect: "slideLeft",
+                onStepChanging: function (event, currentIndex, newIndex)
+                {
+                    $("#form-2").validate().settings.ignore = ":disabled,:hidden";
+                    return $("#form-2").valid();
+                },
+                onFinishing: function (event, currentIndex)
+                {
+                    $("#form-2").validate().settings.ignore = ":disabled";
+                    return $("#form-2").valid();
+                },
+                onFinished: function (event, currentIndex)
+                {
+                    alert("Submitted!");
+                }
+            });
+   
+        });
+    
+    </script>
+  </body>
+</html>

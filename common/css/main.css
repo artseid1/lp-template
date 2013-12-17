@@ -1,0 +1,100 @@
+
+@font-face  {
+    font-family: 'MetaBlackLFRoman';
+    src: url('../fonts/metabl06-webfont.eot');
+    src: url('../fonts/metabl06-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/metabl06-webfont.woff') format('woff'),
+         url('../fonts/metabl06-webfont.ttf') format('truetype'),
+         url('../fonts/metabl06-webfont.svg#MetaBlackLFRoman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*------ gLoblal------*/
+body {font-family: Arial; margin: 0px;padding: 0px;line-height:1.8em;}
+
+/*------ header------*/
+header {background-color: #330066;color: #fff;padding: 12px 0px 0px 0px;}
+header .info {min-height: 48px;overflow: hidden;}
+header .floater-box{position: relative;}
+header .phone {display: block; margin: 13px 0 0 0;}
+header .phone a {font-size: 16px; text-decoration: none;color: #fff;}
+header .chat a {font-weight: bold;text-transform: uppercase;padding: 10px;display: block;}
+header .logo {height: 45px; }	
+header .hero-wrapper {border-color: #fff; border-top: 1px solid;border-right: 1px solid;border-left: 1px solid;overflow: hidden;display: block;}
+header .hero {background: url(../img/placeholder-img.jpg); min-height: 210px;}
+header .title-box {background-color: #272753;}
+header h1 {font-family: 'MetaBlackLFRoman';font-size: 34px; margin: 0;}
+.header-middle-align {display: table-cell; vertical-align: middle;}
+
+/*------ body  ------*/
+.main h1 {font-size: 24px; color:#003366; font-weight: bold;}
+.main h2 {font-size: 20px; color:#003366; font-weight: bold;}
+.main h3 {font-size: 18px; color:#003366; font-weight: bold;}
+.main a {color:#3399ff;}
+.main a:hover {text-decoration: underline;}
+.testimonial ul{background-color:#f2f2f2; padding:10px 20px; display: block; overflow: hidden; list-style: none; border: 1px solid #f9f9f9; font-size: 12px;}
+.testimonial p {color:#324c67;}
+.testimonial p.last{margin:0;}
+.testimonial i {margin-bottom: 5px;}
+.testimonial ul li  {line-height: 1.2em;} 
+.testimonial img {margin: 0 auto;display: table-cell;padding:0 0 5px 0;}
+.testimonial .studentname {text-align: right;}
+.testimonial .quote {font-style: italic;}
+.tiny-font {font-size: 10px;line-height: 1em;}
+.tiny-font, .btnwrap{margin: 15px 0 10px;padding: 0;}
+.video {padding-top:25px;}
+
+/*------ sif ------*/
+.sif ul {overflow: hidden;}
+.sif form {padding: 25px 0 0 0; border: 1px solid #666;border-top: none;background: #f2f2f2 url(../img/down-arrow-tab.png) center -1px no-repeat;font-size: 12px;}
+.sif h1 {font-family: 'MetaBlackLFRoman';font-size: 34px;margin: 0 0 5px 0;color:#ffffff;}
+.sif h2 {font-size: 12px;margin: 0;color:#ffffff;}
+.sif label {display: block; font-weight: normal;}
+.sif .sif-header {
+	background: #6f50b5;
+	background: -moz-linear-gradient(top,  #6f50b5 0%, #340e62 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6f50b5), color-stop(100%,#340e62));
+	background: -webkit-linear-gradient(top,  #6f50b5 0%,#340e62 100%);
+	background: -o-linear-gradient(top,  #6f50b5 0%,#340e62 100%);
+	background: -ms-linear-gradient(top,  #6f50b5 0%,#340e62 100%);
+	background: linear-gradient(to bottom,  #6f50b5 0%,#340e62 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f50b5', endColorstr='#340e62',GradientType=0 );
+	padding:3%;
+	display: block;
+}
+.sif .question {margin: 0 3% 20px 3%; overflow: hidden;}
+.sif .button-bar {background-color: #ccc; margin: 25px 1px 1px 1px}
+
+/*------ footer ------*/
+footer {font-size: 11px; margin-top: 25px}
+footer img {width: 54px;margin: 0 auto;display: block;}
+
+/*------ responsive  ------*/
+@media (min-width: 970px) {
+	.sif h2 {font-size: 12px;padding:6px 0 0 0;}
+	.sif .form-control{font-size: 12px;}
+}
+@media (min-width: 768px) {
+	.gutter-remove {padding: 0px;}
+	.gutter-remove-left {padding-left: 0px;}
+	.gutter-remove-right {padding-right: 0px;}
+	.header-middle-align {height: 210px;}	
+	.info {padding: 12px 0;}
+	.sif h1 {font-size: 30px}
+}
+@media (max-width: 768px) {
+	header h1 {padding: 25px 0;}
+	header .phone {margin:0;}
+	header .phone a {font-size: 24px;text-align: center;width: 100%;display: block;padding: 10px 0;}
+	header .chat a {font-size: 20px;margin-bottom: 20px;}
+	header .logo img {display: block;margin: 5px auto;}
+	.info {padding:0px 15px 6px 15px;}
+}
+@media (max-width: 480px) {
+	.sif h1 {font-size: 28px;}
+}
+
+
+
+
